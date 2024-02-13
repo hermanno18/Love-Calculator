@@ -11,15 +11,15 @@
 
 <body class="" onload="myFunction()">
     <div id="inputs">
-        <header>
+        <header class="home">
             <h1>Love Calculator</h1>
-            <p>calculate your love percentage</p>
-            <img src="/" alt="">
+            <p class="container">Calculez le pourcentage de compatibilité de votre couple !</p>
+            <img src="./img/couple.png" alt="">
         </header>
-        <form onsubmit="return makeCaculations(event)" action="#">
+        <form onsubmit="return makeCaculations(event)" action="#" class="container">
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum harum a voluptate aliquam ipsa odio dolor
-                aperiam.
+                Essayez ce test simple et amusant avec juste
+                un clic !
             </p>
             <div><input type="text" class="" id="name_male" required placeholder="Prénom du partenaire"></div>
             <div><input type="text" class="" id="name_female" required placeholder="prénom de la partenaire"></div>
@@ -27,62 +27,124 @@
         </form>
     </div>
     <div id="calc-loader" data-display="true">
-        <div>
-            <img src="/aimation">
-            <p>
-                chargement...
+        <header class="heart">
+            <div class="tenor-gif-embed" data-postid="10536607460438133760" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/bubu-dudu-kisses-in-love-couple-excited-gif-10536607460438133760">Bubu Dudu Kisses GIF</a>from <a href="https://tenor.com/search/bubu+dudu-gifs">Bubu Dudu GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+            <p style="margin-top: 30px;">
+                Côte à côtes, nos ❤️ battent ...
             </p>
-        </div>
+        </header>
 
     </div>
     <div id="results">
-        <header>
-            <h2 class="result">
-                <span id="score"></span> <span class="per">%</span>
-                <div class="deco"></div>
-                <!-- <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div>
-                <div class="deco"></div> -->
-            </h2>
-            <h3>Yasmine 3 Hermann</h3>
-            <p>bravo !</p>
-        </header>
         <div>
-            <p id="message"></p>
-        </div>
-        <div style="display: flex; justify-content: center;">
-            <button onclick="restart()">
-                calculer de nouveau.
-            </button>
-        </div>
+            <header>
+                <h2 class="result">
+                    <span id="score"></span> <span class="per">%</span>
+                    <div class="deco"></div>
+                    <!-- <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div>
+                    <div class="deco"></div> -->
+                </h2>
+                <h3><span id="d_male"></span> ❤️ <span id="d_female"></span></h3>
+            </header>
+            <div class="container">
+                <p id="message"></p>
+            </div>
+            <div style="display: flex; justify-content: center;" class="container">
+                <button onclick="window.location.href = '/'">
+                    calculer de nouveau.
+                </button>
+            </div>
 
-        <div>
-            <p>Partager mon résultat :</p>
-            <div class="sharers">
-                <a href="">
-                    <img src="" alt="whatsapp">
-                    <img src="" alt="facebook">
-                    <img src="" alt="twitter">
-                </a>
+            <div class="container" style="margin-top: 30px;">
+                <p>Partager sur :</p>
+                <div class="sharers">
+                    <a id="sharer_w" href="" data-action="share/whatsapp/share">
+                        <svg width="40px" height="40px" viewBox="-1.5 0 259 259" version="1.1"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                            preserveAspectRatio="xMidYMid">
+                            <g>
+                                <path
+                                    d="M67.6631045,221.823373 L71.8484512,223.916047 C89.2873956,234.379413 108.819013,239.262318 128.350631,239.262318 L128.350631,239.262318 C189.735716,239.262318 239.959876,189.038158 239.959876,127.653073 C239.959876,98.3556467 228.101393,69.7557778 207.17466,48.8290445 C186.247927,27.9023111 158.345616,16.0438289 128.350631,16.0438289 C66.9655467,16.0438289 16.7413867,66.2679889 17.4389445,128.350631 C17.4389445,149.277365 23.7169645,169.50654 34.1803311,186.945485 L36.9705622,191.130831 L25.8096378,232.28674 L67.6631045,221.823373 Z"
+                                    fill="#00E676">
+                                </path>
+                                <path
+                                    d="M219.033142,37.66812 C195.316178,13.2535978 162.530962,0 129.048189,0 C57.8972956,0 0.697557778,57.8972956 1.39511556,128.350631 C1.39511556,150.67248 7.67313556,172.296771 18.1365022,191.828389 L0,258.096378 L67.6631045,240.657433 C86.4971645,251.1208 107.423898,256.003705 128.350631,256.003705 L128.350631,256.003705 C198.803967,256.003705 256.003705,198.106409 256.003705,127.653073 C256.003705,93.4727423 242.750107,61.3850845 219.033142,37.66812 Z M129.048189,234.379413 L129.048189,234.379413 C110.214129,234.379413 91.380069,229.496509 75.3362401,219.7307 L71.1508934,217.638027 L30.6925422,228.101393 L41.1559089,188.3406 L38.3656778,184.155253 C7.67313556,134.628651 22.3218489,69.05822 72.5460089,38.3656778 C122.770169,7.67313556 187.643042,22.3218489 218.335585,72.5460089 C249.028127,122.770169 234.379413,187.643042 184.155253,218.335585 C168.111425,228.798951 148.579807,234.379413 129.048189,234.379413 Z M190.433273,156.9505 L182.760138,153.462711 C182.760138,153.462711 171.599213,148.579807 164.623636,145.092018 C163.926078,145.092018 163.22852,144.39446 162.530962,144.39446 C160.438289,144.39446 159.043173,145.092018 157.648058,145.789576 L157.648058,145.789576 C157.648058,145.789576 156.9505,146.487133 147.184691,157.648058 C146.487133,159.043173 145.092018,159.740731 143.696902,159.740731 L142.999345,159.740731 C142.301787,159.740731 140.906671,159.043173 140.209113,158.345616 L136.721325,156.9505 L136.721325,156.9505 C129.048189,153.462711 122.072611,149.277365 116.492149,143.696902 C115.097033,142.301787 113.00436,140.906671 111.609245,139.511556 C106.72634,134.628651 101.843436,129.048189 98.3556467,122.770169 L97.658089,121.375053 C96.9605312,120.677496 96.9605312,119.979938 96.2629734,118.584822 C96.2629734,117.189707 96.2629734,115.794591 96.9605312,115.097033 C96.9605312,115.097033 99.7507623,111.609245 101.843436,109.516571 C103.238551,108.121456 103.936109,106.028782 105.331225,104.633667 C106.72634,102.540993 107.423898,99.7507623 106.72634,97.658089 C106.028782,94.1703001 97.658089,75.3362401 95.5654156,71.1508934 C94.1703001,69.05822 92.7751845,68.3606623 90.6825112,67.6631045 L88.5898378,67.6631045 C87.1947223,67.6631045 85.1020489,67.6631045 83.0093756,67.6631045 C81.6142601,67.6631045 80.2191445,68.3606623 78.8240289,68.3606623 L78.1264712,69.05822 C76.7313556,69.7557778 75.3362401,71.1508934 73.9411245,71.8484512 C72.5460089,73.2435667 71.8484512,74.6386823 70.4533356,76.0337978 C65.5704312,82.3118178 62.7802,89.9849534 62.7802,97.658089 L62.7802,97.658089 C62.7802,103.238551 64.1753156,108.819013 66.2679889,113.701918 L66.9655467,115.794591 C73.2435667,129.048189 81.6142601,140.906671 92.7751845,151.370038 L95.5654156,154.160269 C97.658089,156.252942 99.7507623,157.648058 101.145878,159.740731 C115.794591,172.296771 132.535978,181.365022 151.370038,186.247927 C153.462711,186.945485 156.252942,186.945485 158.345616,187.643042 L158.345616,187.643042 C160.438289,187.643042 163.22852,187.643042 165.321193,187.643042 C168.808982,187.643042 172.994329,186.247927 175.78456,184.852811 C177.877233,183.457696 179.272349,183.457696 180.667465,182.06258 L182.06258,180.667465 C183.457696,179.272349 184.852811,178.574791 186.247927,177.179676 C187.643042,175.78456 189.038158,174.389445 189.735716,172.994329 C191.130831,170.204098 191.828389,166.716309 192.525947,163.22852 C192.525947,161.833405 192.525947,159.740731 192.525947,158.345616 C192.525947,158.345616 191.828389,157.648058 190.433273,156.9505 Z"
+                                    fill="#FFFFFF">
+                                </path>
+                            </g>
+                        </svg>
+                    </a>
+                    <a id="sharer_f" href="" target="_blank">
+                        <?xml version="1.0" encoding="utf-8"?>
+                        <svg width="40px" height="40px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                            fill="none">
+                            <path fill="#1877F2"
+                                d="M15 8a7 7 0 00-7-7 7 7 0 00-1.094 13.915v-4.892H5.13V8h1.777V6.458c0-1.754 1.045-2.724 2.644-2.724.766 0 1.567.137 1.567.137v1.723h-.883c-.87 0-1.14.54-1.14 1.093V8h1.941l-.31 2.023H9.094v4.892A7.001 7.001 0 0015 8z" />
+                            <path fill="#ffffff"
+                                d="M10.725 10.023L11.035 8H9.094V6.687c0-.553.27-1.093 1.14-1.093h.883V3.87s-.801-.137-1.567-.137c-1.6 0-2.644.97-2.644 2.724V8H5.13v2.023h1.777v4.892a7.037 7.037 0 002.188 0v-4.892h1.63z" />
+                        </svg>
+                    </a>
+                    <a id="sharer_x" href=""
+                        target="_blank">
+                        <svg width="40px" height="40px" viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="20" fill="#1DA1F2" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
+        <div class="credits">
+            fait avec ❤️ par: <a href="https://github.com/hermanno18" target="_blank">@Hermanno18</a>
+        </div>
     </div>
+    <div class="credits">
+        fait avec ❤️ par: <a href="https://github.com/hermanno18" target="_blank">@Hermanno18</a>
+    </div>
+    <svg height="0" width="0">
+        <defs>
+          <clipPath id="heartMask" clipPathUnits="objectBoundingBox">
+            <path d="M 0.5,0 C 0.8,0,1,0.2,1,0.5 1,0.8,0.8,1,0.5,1 0.2,1,0,0.8,0,0.5 0,0.2,0.2,0,0.5,0 Z" />
+          </clipPath>
+        </defs>
+      </svg>
 </body>
 <script>
+
+    
     function myFunction() {
         setTimeout(showPage, 3000);
     }
 
     function showPage() {
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        const male = params.get('male');
+        const female = params.get('female');
+        if (male && female) {
+            displayResults(male, female)
+            document.getElementById('results').setAttribute('data-display', 'true')
+            document.getElementById('d_male').innerText = male
+            document.getElementById('d_female').innerText = female
+            const message = `${male} et ${female} sont compatibles à ${calculateCompatibility(male, female)}% ❤️! Viens faire toi aussi le test ! `
+            document.getElementById('sharer_x').setAttribute('href', `whatsapp://send?text=${message} : ${url}`)
+            document.getElementById('sharer_f').setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`)
+            document.getElementById('sharer_x').setAttribute('href', `https://twitter.com/intent/tweet?url=${url}&text=${message} `)
+        }
+        
         document.getElementById("calc-loader").setAttribute('data-display', 'false');
     }
 </script>
@@ -146,7 +208,6 @@
         return "Invalide";
     }
 
-
     const loader = document.getElementById('calc-loader')
     const results = document.getElementById('results')
 
@@ -155,12 +216,25 @@
         loader.setAttribute('data-display', 'true')
         const male = document.getElementById('name_male').value
         const female = document.getElementById('name_female').value
-        displayResults(male, female)
-        setTimeout(() => {
-            results.setAttribute('data-display', 'true')
-            loader.setAttribute('data-display', 'false')
-        }, 2000);
 
+        var url = new URL(window.location.href);
+        // Créez un nouvel objet URLSearchParams basé sur les paramètres actuels de l'URL
+        var params = new URLSearchParams(url.search);
+        // Ajoutez de nouveaux paramètres GET
+        if (!params.has('male')) {
+            params.append('male', male);
+        } else {
+            params.set('male', male);
+        }
+
+        if (!params.has('female')) {
+            params.append('female', female);
+        } else {
+            params.set('female', female);
+        }
+        // Mettez à jour les paramètres de l'URL avec les nouveaux paramètres ajoutés
+        url.search = params.toString();
+        window.location.href = url
     }
 
     function displayResults(male, female) {
@@ -170,14 +244,7 @@
         document.getElementById('message').innerText = message
         document.getElementById('score').innerText = compatibility.toFixed(2)
     }
-    function restart() {
-        loader.setAttribute('data-display', 'true')
-        results.setAttribute('data-display', 'false')
-        setTimeout(() => {
-            loader.setAttribute('data-display', 'false')
-        }, 2000);
 
-    }
 </script>
 
 </html>
