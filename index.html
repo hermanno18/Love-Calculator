@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love calculator !</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+<body class="" onload="myFunction()">
+    <div id="inputs">
+        <header>
+            <h1>Love Calculator</h1>
+            <p>calculate your love percentage</p>
+            <img src="/" alt="">
+        </header>
+        <form onsubmit="return makeCaculations(event)" action="#">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum harum a voluptate aliquam ipsa odio dolor
+                aperiam.
+            </p>
+            <div><input type="text" class="" id="name_male" required placeholder="Prénom du partenaire"></div>
+            <div><input type="text" class="" id="name_female" required placeholder="prénom de la partenaire"></div>
+            <button type="submit">Calcuer !</button>
+        </form>
+    </div>
+    <div id="calc-loader" data-display="true">
+        <div>
+            <img src="/aimation">
+            <p>
+                chargement...
+            </p>
+        </div>
+
+    </div>
+    <div id="results">
+        <header>
+            <h2 class="result">
+                <span id="score"></span> <span class="per">%</span>
+                <div class="deco"></div>
+                <!-- <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div>
+                <div class="deco"></div> -->
+            </h2>
+            <h3>Yasmine 3 Hermann</h3>
+            <p>bravo !</p>
+        </header>
+        <div>
+            <p id="message"></p>
+        </div>
+        <div style="display: flex; justify-content: center;">
+            <button onclick="restart()">
+                calculer de nouveau.
+            </button>
+        </div>
+
+        <div>
+            <p>Partager mon résultat :</p>
+            <div class="sharers">
+                <a href="">
+                    <img src="" alt="whatsapp">
+                    <img src="" alt="facebook">
+                    <img src="" alt="twitter">
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function myFunction() {
+        setTimeout(showPage, 3000);
+    }
+
+    function showPage() {
+        document.getElementById("calc-loader").setAttribute('data-display', 'false');
+    }
+</script>
+<script src="./calculator.js"></script>
+<script>
+    const compatibilityMessages = {
+        "0-20": [
+            "La compatibilité est très faible. Il y a peut-être des aspects à explorer davantage.",
+            "C'est un début, mais il y a place à l'amélioration.",
+            "La magie opérera peut-être avec un peu plus de temps et de compréhension mutuelle.",
+            // ... Ajoutez d'autres messages pour cet intervalle
+        ],
+        "20-40": [
+            "Il y a un potentiel d'amélioration. Prenez le temps de mieux vous connaître.",
+            "La compatibilité s'améliore, mais il y a encore du travail à faire.",
+            "Continuez à investir dans la relation, vous pourriez être surpris.",
+            // ... Ajoutez d'autres messages pour cet intervalle
+        ],
+        "40-60": [
+            "Vous avez une compatibilité raisonnable. Il y a une base solide à explorer.",
+            "C'est encourageant ! Continuez à approfondir vos liens.",
+            "La compatibilité est au rendez-vous, profitez-en !",
+            // ... Ajoutez d'autres messages pour cet intervalle
+        ],
+        "60-80": [
+            "La compatibilité est très bonne ! Vous avez de grandes chances de bien vous entendre.",
+            "C'est une excellente nouvelle ! Explorez toutes les possibilités de cette belle connexion.",
+            "Votre compatibilité est remarquable. Profitez de cette belle relation !",
+            // ... Ajoutez d'autres messages pour cet intervalle
+        ],
+        "80-100": [
+            "Vous êtes faits l'un pour l'autre ! C'est une compatibilité exceptionnelle ! ❤️",
+            "Félicitations ! Vous avez une compatibilité extraordinaire. Profitez de chaque moment ensemble !",
+            "Une compatibilité parfaite ! Vous êtes sur le chemin d'une relation exceptionnelle !",
+            // ... Ajoutez d'autres messages pour cet intervalle
+        ]
+    };
+
+    function getRandomMessage(compatibility) {
+        const interval = getInterval(compatibility);
+        const messages = compatibilityMessages[interval];
+        if (messages && messages.length > 0) {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            return messages[randomIndex];
+        }
+        return "Erreur : Message non trouvé.";
+    }
+
+    function getInterval(compatibility) {
+        if (compatibility >= 0 && compatibility <= 20) {
+            return "0-20";
+        } else if (compatibility > 20 && compatibility <= 40) {
+            return "20-40";
+        } else if (compatibility > 40 && compatibility <= 60) {
+            return "40-60";
+        } else if (compatibility > 60 && compatibility <= 80) {
+            return "60-80";
+        } else if (compatibility > 80 && compatibility <= 100) {
+            return "80-100";
+        }
+        return "Invalide";
+    }
+
+
+    const loader = document.getElementById('calc-loader')
+    const results = document.getElementById('results')
+
+    function makeCaculations(e) {
+        e.preventDefault()
+        loader.setAttribute('data-display', 'true')
+        const male = document.getElementById('name_male').value
+        const female = document.getElementById('name_female').value
+        displayResults(male, female)
+        setTimeout(() => {
+            results.setAttribute('data-display', 'true')
+            loader.setAttribute('data-display', 'false')
+        }, 2000);
+
+    }
+
+    function displayResults(male, female) {
+        const compatibility = calculateCompatibility(male, female);
+        const message = getRandomMessage(compatibility);
+        console.log("Message de compatibilité aléatoire :", compatibility, message);
+        document.getElementById('message').innerText = message
+        document.getElementById('score').innerText = compatibility.toFixed(2)
+    }
+    function restart() {
+        loader.setAttribute('data-display', 'true')
+        results.setAttribute('data-display', 'false')
+        setTimeout(() => {
+            loader.setAttribute('data-display', 'false')
+        }, 2000);
+
+    }
+</script>
+
+</html>
