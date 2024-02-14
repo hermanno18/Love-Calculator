@@ -139,7 +139,7 @@
             document.getElementById('results').setAttribute('data-display', 'true')
             document.getElementById('d_male').innerText = male
             document.getElementById('d_female').innerText = female
-            const message = `${male} et ${female} sont compatibles à ${calculateCompatibility(male, female)}% ❤️! Viens faire toi aussi le test ! `
+            const message = `${male} et ${female} sont compatibles à ${calculateCompatibility(male, female).toFixed(2)}% ❤️! Viens faire toi aussi le test ! `
             document.getElementById('sharer_w').setAttribute('href', `whatsapp://send?text=${message} : ${url}`)
             document.getElementById('sharer_f').setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`)
             document.getElementById('sharer_x').setAttribute('href', `https://twitter.com/intent/tweet?url=${url}&text=${message} `)
