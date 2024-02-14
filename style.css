@@ -18,6 +18,51 @@
         opacity: 0;
     }
 }
+@keyframes zoomFadeIn2 {
+    100% {
+        opacity: 1;
+    }
+    0% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate {
+    0%, 100% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes transrotation {
+    0%, 100% {
+        transform: translate(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateX(-50px) rotate(-20deg);
+    }
+    75% {
+        transform: translateX(50px) rotate(20deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-8px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
+  .bounce {
+    animation: bounce 1s infinite;
+  }
 
 p, input, button {
     font-weight: 200;
@@ -32,6 +77,7 @@ p, input, button {
     margin-right: auto;
 }
 button {
+    animation: bounce 4s infinite;
     width: fit-content;
     margin: auto;
     padding: 15px 40px;
@@ -96,7 +142,7 @@ header {
 
 body {
     background-color: #ffffff;
-    height: 100vh;
+    height: 100dvh;
     width: 100dvw;
     display: flex;
     flex-direction: column;
@@ -165,7 +211,7 @@ body {
     #calc-loader {
         color: white;
         background-color: var(--primary);
-        height: 100dvh;
+        height: 100dvi;
         width: 100dvw;
         display: flex;
         place-content: center;
@@ -201,18 +247,88 @@ body {
         & div:first-child {
             flex: 1;
         }
+        header {
+            position: relative;
+            &>img {
+                position: absolute;
+                z-index: 20;
+                top: 0;
+                right: -30px;
+
+                &:first-child {
+                    bottom: 0;
+                    left: -30px;
+                    top: unset;
+                }
+            }
+        }
         .result {
             position: relative;
-
+            z-index: 200;
             .deco {
                 height: 10px;
                 width: 10px;
                 background-color: var(--secondary);
                 position: absolute;
+                border-radius: 999px;
+                top: 0;
+                left: 0;
+                border: 1px solid white;
+                opacity: 0;
+                &.a {
+                    bottom: 0;
+                    top: unset;
+                    height: 20px;
+                    width: 20px;
+                    animation-delay: 1s;
+                }
+                &.b{
+                    top: unset;
+                    height: 20px;
+                    width: 20px;
+                    animation-delay: 1.5s;
+                }
+                &.c{
+                    bottom: 0;
+                    top: unset;
+                    height: 50px;
+                    width: 50px;
+                    animation-delay: 2s;
+                }
+                &.d{
+                    height: 40px;
+                    width: 40px;
+                    animation-delay: 2.5s;
+                }
+                
+                &.f{
+                    right: 0;
+                    left: unset;
+                    bottom: -8%;
+                    top: unset;
+                    height: 30px;
+                    width: 30px;
+                    z-index: 1;
+                    animation-delay: 3.5s;
+                }
+                
+                &.g{
+                    right: 0;
+                    left: unset;
+                    bottom: -0%;
+                    top: unset;
+                    height: 40px;
+                    animation-delay: 3s;
+                    width: 40px;
 
-                &:nth-child(1), &:first-child {
-                    top: -1rem;
-                    left: -1rem;
+                }
+                &.e{
+                    bottom: 0;
+                    height: 40px;
+                    right: 0;
+                    left: unset;
+                    width: 40px;
+                    animation-delay: .5s;
                 }
             }
         }
@@ -226,6 +342,19 @@ body {
         visibility: visible;
         opacity: 1;
 
+        .deco {
+            animation: zoomFadeIn2 5s cubic-bezier(0.075, 0.82, 0.165, 1)  forwards;
+        }
+        header {
+            img {
+                
+                animation: transrotation 5s ease-in-out  infinite;
+                &:first-child {
+                    animation-delay: 2s;
+                    animation: rotate 5s cubic-bezier(0.075, 0.82, 0.165, 1)  infinite;
+                }
+            }
+        }
         .sharers {
             display: flex;
             gap: 20px;
