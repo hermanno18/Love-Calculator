@@ -211,7 +211,7 @@ body {
     #calc-loader {
         color: white;
         background-color: var(--primary);
-        height: 100dvi;
+        height: 100dvh;
         width: 100dvw;
         display: flex;
         place-content: center;
