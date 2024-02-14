@@ -11,13 +11,11 @@
     --secondary : #ffb1d5;
 }
 @keyframes zoomFadeIn {
+    10%, 90% {
+        opacity: 1;
+    }
     0%, 100% {
         opacity: 0;
-        transform: scale(0.5);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1);
     }
 }
 
@@ -182,8 +180,11 @@ body {
         
     }
     #calc-loader[data-display='true']  {
-        animation: zoomFadeIn 3s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        animation: zoomFadeIn 5s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
         visibility: visible;
+        header {
+            background-color: transparent;
+        }
     }
     #results {
         height: 100dvh;

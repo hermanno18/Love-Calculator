@@ -66,7 +66,7 @@
             </div>
 
             <div class="container" style="margin-top: 30px;">
-                <p>Partager sur :</p>
+                <p>Partager sur:</p>
                 <div class="sharers">
                     <a id="sharer_w" href="" data-action="share/whatsapp/share">
                         <svg width="40px" height="40px" viewBox="-1.5 0 259 259" version="1.1"
@@ -140,7 +140,7 @@
             document.getElementById('d_male').innerText = male
             document.getElementById('d_female').innerText = female
             const message = `${male} et ${female} sont compatibles à ${calculateCompatibility(male, female)}% ❤️! Viens faire toi aussi le test ! `
-            document.getElementById('sharer_x').setAttribute('href', `whatsapp://send?text=${message} : ${url}`)
+            document.getElementById('sharer_w').setAttribute('href', `whatsapp://send?text=${message} : ${url}`)
             document.getElementById('sharer_f').setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`)
             document.getElementById('sharer_x').setAttribute('href', `https://twitter.com/intent/tweet?url=${url}&text=${message} `)
         }
@@ -213,7 +213,7 @@
 
     function makeCaculations(e) {
         e.preventDefault()
-        loader.setAttribute('data-display', 'true')
+        // loader.setAttribute('data-display', 'true')
         const male = document.getElementById('name_male').value
         const female = document.getElementById('name_female').value
 
