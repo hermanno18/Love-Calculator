@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love calculator !</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.jpeg" type="image/x-icon">
+    <meta property="og:title" content="Love Calculator" />
+    <meta property="og:description" content="Calculez le pourcentage de compatibilité de votre couple !" />
+    <meta property="og:image" content="./favicon.jpeg" />
 </head>
 <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
@@ -23,7 +27,7 @@
             </p>
             <div><input type="text" class="" id="name_male" required placeholder="Prénom du partenaire"></div>
             <div><input type="text" class="" id="name_female" required placeholder="prénom de la partenaire"></div>
-            <button type="submit">Calcuer !</button>
+            <button type="submit">Calculer !</button>
         </form>
     </div>
     <div id="calc-loader" data-display="true">
@@ -140,6 +144,7 @@
             document.getElementById('d_male').innerText = male
             document.getElementById('d_female').innerText = female
             const message = `${male} et ${female} sont compatibles à ${calculateCompatibility(male, female).toFixed(2)}% ❤️! Viens faire toi aussi le test ! `
+            document.querySelector('title').innerText = message
             document.getElementById('sharer_w').setAttribute('href', `whatsapp://send?text=${message} : ${url}`)
             document.getElementById('sharer_f').setAttribute('href', `https://www.facebook.com/sharer/sharer.php?u=${url}`)
             document.getElementById('sharer_x').setAttribute('href', `https://twitter.com/intent/tweet?url=${url}&text=${message} `)
